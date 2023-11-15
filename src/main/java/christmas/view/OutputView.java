@@ -98,4 +98,9 @@ public class OutputView {
         }
     }
 
+    public static void printAfterPrice(int afterPrice) {
+        System.out.println("\n"+"<할인 후 예상 결제 금액>");
+        System.out.println(df.format(afterPrice) + "원");
+    }
+
 }
