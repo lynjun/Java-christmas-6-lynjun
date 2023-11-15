@@ -65,4 +65,13 @@ public class OutputView {
         }
     }
 
+    public static void printDayOfWeekDiscount(int weeklyDiscount, String dayType) {
+        if (dayType.equals("weekday")) {
+            System.out.println("평일 할인: -" + df.format(weeklyDiscount) + "원");
+        }
+        if (dayType.equals("weekend")) {
+            System.out.println("주말 할인: -" + df.format(weeklyDiscount) + "원");
+        }
+    }
+
 }
