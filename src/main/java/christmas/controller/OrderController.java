@@ -13,6 +13,7 @@ public class OrderController {
 
     public OrderController() {
         setMenu();
+        setDiscount();
     }
 
     private void setMenu() {
@@ -26,5 +27,11 @@ public class OrderController {
         DiscountService.previewTheBenefits(day);
         //할인 전 총주문 금액, 증정 메뉴
         totalPrice = OrderService.setBeforePrice();
+    }
+
+    private void setDiscount(){
+        // 크리스마스 디데이 할인
+        int dayDiscount = DiscountService.dayDiscount(day);
+
     }
 }
