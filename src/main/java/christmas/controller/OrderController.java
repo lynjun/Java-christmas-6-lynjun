@@ -36,6 +36,8 @@ public class OrderController {
         int weeklyDiscount = DiscountService.weeklyDiscount(menu, day);
         // 특별할인
         int specialDiscount = DiscountService.specialDiscount(day);
+        // 증정 이벤트
+        int giftPrice = DiscountService.giftEvent(totalPrice);
 
     }
 }
