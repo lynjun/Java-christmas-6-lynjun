@@ -43,4 +43,11 @@ public class Date {
         return weekly.getWeekly();
     }
 
+    public String getDayOfTheWeek(){
+        LocalDate date = LocalDate.of(2023, 12, day);
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+
+        return dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.US);
+    }
+
 }
