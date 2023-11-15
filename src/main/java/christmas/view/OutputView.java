@@ -82,4 +82,20 @@ public class OutputView {
         System.out.println("증정 이벤트: -" + df.format(giftPrice) + "원");
     }
 
+    public static void printDiscount(int totalDiscountAmount) {
+        if (totalDiscountAmount == 0) {
+            System.out.println("없음");
+        }
+    }
+
+    public static void printTotalDiscount(int totalDiscountAmount) {
+        System.out.println("\n"+"<총혜택 금액>");
+        if (totalDiscountAmount > 0) {
+            System.out.println("-" + df.format(totalDiscountAmount) + "원");
+        }
+        if (totalDiscountAmount == 0) {
+            System.out.println("0원");
+        }
+    }
+
 }
