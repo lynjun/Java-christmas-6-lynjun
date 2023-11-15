@@ -3,6 +3,7 @@ package christmas.controller;
 import christmas.service.DiscountService;
 import christmas.service.OrderService;
 import christmas.util.Menu;
+import christmas.view.OutputView;
 
 import java.util.HashMap;
 
@@ -15,6 +16,7 @@ public class OrderController {
     public OrderController() {
         setMenu();
         setDiscount();
+        printBadge();
     }
 
     private void setMenu() {
@@ -43,6 +45,10 @@ public class OrderController {
         totalDiscount = DiscountService.totalDiscount(dayDiscount,weeklyDiscount,specialDiscount,giftPrice);
         // 할인 후 예상 결제 금액
         OrderService.afterPrice(totalDiscount);
+    }
 
+    private void printBadge(){
+        // 12월 이벤트 배지
+        OutputView.printEventBadge(totalDiscount);
     }
 }
