@@ -1,11 +1,13 @@
 package christmas.model;
 
+import christmas.validate.Validation;
 
 public class Date {
     private int day;
 
     public Date(String date) {
         convertStringToInteger(date);
+        Validation.validateRange(day);
     }
 
     private void convertStringToInteger(String date) {
