@@ -10,6 +10,7 @@ public class OrderController {
     private int day;
     private HashMap<Menu,Integer> menu;
     private int totalPrice;
+    private int totalDiscount;
 
     public OrderController() {
         setMenu();
@@ -38,6 +39,8 @@ public class OrderController {
         int specialDiscount = DiscountService.specialDiscount(day);
         // 증정 이벤트
         int giftPrice = DiscountService.giftEvent(totalPrice);
+        // 총혜택 금액
+        totalDiscount = DiscountService.totalDiscount(dayDiscount,weeklyDiscount,specialDiscount,giftPrice);
 
     }
 }
