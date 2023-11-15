@@ -34,6 +34,8 @@ public class OrderController {
         int dayDiscount = DiscountService.dayDiscount(day);
         // 평일 할인 Or 주말 할인
         int weeklyDiscount = DiscountService.weeklyDiscount(menu, day);
+        // 특별할인
+        int specialDiscount = DiscountService.specialDiscount(day);
 
     }
 }
