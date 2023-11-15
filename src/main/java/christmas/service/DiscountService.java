@@ -11,6 +11,8 @@ import static christmas.view.OutputView.*;
 public class DiscountService {
 
     private static final int specialPrice = 1000;
+    private static final int eventPrice = 120000;
+    private static final int giftPrice = 25000;
 
     public static void previewTheBenefits(int day){
         Date date = new Date(day);
@@ -74,6 +76,14 @@ public class DiscountService {
         if (dayOfTheWeek.equals("Sun") || day == 25) {
             printSpecialDiscount(specialPrice);
             return specialPrice;
+        }
+        return 0;
+    }
+
+    public static int giftEvent(int totalPrice) {
+        if (totalPrice >= eventPrice) {
+            OutputView.printGiftEvent(giftPrice);
+            return giftPrice;
         }
         return 0;
     }
