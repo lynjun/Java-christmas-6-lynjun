@@ -1,6 +1,12 @@
 package christmas.model;
 
+import christmas.util.Weekly;
 import christmas.validate.Validation;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 public class Date {
     private int day;
@@ -23,6 +29,17 @@ public class Date {
 
     public int getDay(){
         return day;
+    }
+
+    public String getWeekly(int day){
+        LocalDate date = LocalDate.of(2023, 12, day);
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+
+        String displayName = dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.US);
+
+        Weekly weekly = Weekly.valueOf(displayName);
+
+        return weekly.getWeekly();
     }
 
 }
