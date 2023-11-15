@@ -57,4 +57,12 @@ public class OutputView {
         }
     }
 
+    public static void printDdayDiscount(int dayDiscount) {
+        System.out.println("\n"+"<혜택 내역>");
+
+        if (dayDiscount > 0) {
+            System.out.println("크리스마스 디데이 할인: -" + df.format(dayDiscount) + "원");
+        }
+    }
+
 }
