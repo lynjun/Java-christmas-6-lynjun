@@ -2,9 +2,13 @@ package christmas.view;
 
 import christmas.util.Menu;
 
+import java.text.DecimalFormat;
 import java.util.Map;
 
 public class OutputView {
+    static DecimalFormat df = new DecimalFormat("###,###");
+
+    private static final int eventPrice = 120000;
 
     public static void printOrderedMenu(Map<Menu, Integer> orderMap) {
         System.out.println("\n"+"<주문 메뉴>");
@@ -32,6 +36,13 @@ public class OutputView {
         }
 
         System.out.println("할인 전 총 주문금액이 12만원 이상일 시 샴페인 증정");
+    }
+
+    public static void printTotalPrice(int totalPrice) {
+        System.out.println("\n"+"<할인 전 총주문 금액>");
+
+        System.out.println(df.format(totalPrice) + "원");
+
     }
 
 }
