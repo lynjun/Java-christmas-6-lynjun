@@ -18,5 +18,7 @@ public class OrderController {
         day = OrderService.setDate();
         // 주문할 메뉴와 개수
         menu = OrderService.setMenu();
+        // 주문된 메가 출력
+        OrderService.printMenu();
     }
 }

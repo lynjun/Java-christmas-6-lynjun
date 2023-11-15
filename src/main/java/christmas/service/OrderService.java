@@ -3,6 +3,7 @@ package christmas.service;
 import christmas.Order;
 import christmas.model.Date;
 import christmas.util.Menu;
+import christmas.view.OutputView;
 
 import java.util.HashMap;
 
@@ -34,6 +35,10 @@ public class OrderService {
             System.out.println(e.getMessage());
             return setMenu();
         }
+    }
+
+    public static void printMenu(){
+        OutputView.printOrderedMenu(orderedMenu);
     }
 
 }
