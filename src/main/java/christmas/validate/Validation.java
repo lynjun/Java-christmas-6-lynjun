@@ -1,11 +1,5 @@
 package christmas.validate;
 
-import christmas.util.Menu;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 public class Validation {
     public static void validateRange(int day) {
         if (day < 1 || day > 31) {
