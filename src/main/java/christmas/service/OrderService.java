@@ -54,4 +54,8 @@ public class OrderService {
         return totalPrice;
     }
 
+    public static void afterPrice(int totalDiscount) {
+        OutputView.printAfterPrice(price.afterPrice(totalDiscount));
+    }
+
 }
