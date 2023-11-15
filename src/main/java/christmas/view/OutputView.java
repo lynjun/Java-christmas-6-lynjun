@@ -103,4 +103,21 @@ public class OutputView {
         System.out.println(df.format(afterPrice) + "원");
     }
 
+    public static void printEventBadge(int totalDiscountAmount) {
+        System.out.println("\n"+"<12월 이벤트 배지>");
+        if (totalDiscountAmount >= 20000) {
+            System.out.println("산타");
+            return;
+        }
+        if (totalDiscountAmount >= 10000) {
+            System.out.println("트리");
+            return;
+        }
+        if (totalDiscountAmount >= 5000) {
+            System.out.println("별");
+            return;
+        }
+        System.out.println("없음");
+    }
+
 }
