@@ -16,7 +16,8 @@ public class Date {
         Validation.validateRange(day);
     }
 
-    public Date() {
+    public Date(int day) {
+        this.day = day;
     }
 
     private void convertStringToInteger(String date) {
@@ -31,7 +32,7 @@ public class Date {
         return day;
     }
 
-    public String getWeekly(int day){
+    public String getWeekly(){
         LocalDate date = LocalDate.of(2023, 12, day);
         DayOfWeek dayOfWeek = date.getDayOfWeek();
 
