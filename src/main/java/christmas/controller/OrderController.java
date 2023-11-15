@@ -9,6 +9,7 @@ import java.util.HashMap;
 public class OrderController {
     private int day;
     private HashMap<Menu,Integer> menu;
+    private int totalPrice;
 
     public OrderController() {
         setMenu();
@@ -23,5 +24,7 @@ public class OrderController {
         OrderService.printMenu();
         // 혜택 미리보기
         DiscountService.previewTheBenefits(day);
+        //할인 전 총주문 금액, 증정 메뉴
+        totalPrice = OrderService.setBeforePrice();
     }
 }
