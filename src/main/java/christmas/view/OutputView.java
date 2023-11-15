@@ -78,4 +78,8 @@ public class OutputView {
         System.out.println("특별 할인 : -" + df.format(specialPrice) + "원");
     }
 
+    public static void printGiftEvent(int giftPrice) {
+        System.out.println("증정 이벤트: -" + df.format(giftPrice) + "원");
+    }
+
 }
