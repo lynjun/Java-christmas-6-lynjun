@@ -1,5 +1,6 @@
 package christmas.validate;
 
+import christmas.util.ErrorMessage;
 import christmas.util.Menu;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 public class Validation {
     public static void validateRange(int day) {
         if (day < 1 || day > 31) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.DATE_ERROR.getMessage());
         }
     }
 
@@ -30,7 +31,7 @@ public class Validation {
         int quantity = validateOrderCount(split[1]);
 
         if (quantity <= 0) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
         orderMap.put(Menu.valueOf(split[0]), quantity);
     }
@@ -39,13 +40,13 @@ public class Validation {
         try {
             return Integer.parseInt(count);
         } catch (NumberFormatException e){
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
     }
 
     public static void duplicatedMenu(int menuCnt, int OrderCnt) {
         if (menuCnt != OrderCnt) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
     }
 
@@ -57,7 +58,7 @@ public class Validation {
         }
 
         if (category.size() == 1 && category.get(0).equals("drink")) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
     }
 
@@ -66,7 +67,7 @@ public class Validation {
         for (Integer value : orderMap.values()) {
             sum += value;
             if (sum > 20) {
-                throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+                throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
             }
         }
     }

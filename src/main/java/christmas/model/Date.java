@@ -1,5 +1,6 @@
 package christmas.model;
 
+import christmas.util.ErrorMessage;
 import christmas.util.Weekly;
 import christmas.validate.Validation;
 
@@ -24,7 +25,7 @@ public class Date {
         try {
             day = Integer.parseInt(date);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.DATE_ERROR.getMessage());
         }
     }
 
