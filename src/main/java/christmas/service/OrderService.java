@@ -1,6 +1,7 @@
 package christmas.service;
 
 import christmas.Order;
+import christmas.Price;
 import christmas.model.Date;
 import christmas.util.Menu;
 import christmas.view.OutputView;
@@ -8,11 +9,13 @@ import christmas.view.OutputView;
 import java.util.HashMap;
 
 import static christmas.view.InputView.*;
-import static christmas.view.InputView.inputMenu;
+import static christmas.view.OutputView.*;
 
 public class OrderService {
 
     static HashMap<Menu, Integer> orderedMenu;
+    static int totalPrice;
+    static Price price;
 
     public static int setDate() {
         String day = inputDate();
@@ -39,6 +42,16 @@ public class OrderService {
 
     public static void printMenu(){
         OutputView.printOrderedMenu(orderedMenu);
+    }
+
+    public static int setBeforePrice() {
+        price = new Price(orderedMenu);
+
+        totalPrice = price.beforePrice();
+
+        printTotalPrice(totalPrice);
+
+        return totalPrice;
     }
 
 }
