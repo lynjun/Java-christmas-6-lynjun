@@ -32,6 +32,8 @@ public class OrderController {
     private void setDiscount(){
         // 크리스마스 디데이 할인
         int dayDiscount = DiscountService.dayDiscount(day);
+        // 평일 할인 Or 주말 할인
+        int weeklyDiscount = DiscountService.weeklyDiscount(menu, day);
 
     }
 }
