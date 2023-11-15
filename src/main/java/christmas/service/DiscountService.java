@@ -10,6 +10,8 @@ import static christmas.view.OutputView.*;
 
 public class DiscountService {
 
+    private static final int specialPrice = 1000;
+
     public static void previewTheBenefits(int day){
         Date date = new Date(day);
         String weekly = date.getWeekly();
@@ -63,5 +65,16 @@ public class DiscountService {
             }
         }
         return dessertCount;
+    }
+
+    public static int specialDiscount(int day) {
+        Date date = new Date(day);
+        String dayOfTheWeek = date.getDayOfTheWeek();
+
+        if (dayOfTheWeek.equals("Sun") || day == 25) {
+            printSpecialDiscount(specialPrice);
+            return specialPrice;
+        }
+        return 0;
     }
 }
