@@ -41,6 +41,8 @@ public class OrderController {
         int giftPrice = DiscountService.giftEvent(totalPrice);
         // 총혜택 금액
         totalDiscount = DiscountService.totalDiscount(dayDiscount,weeklyDiscount,specialDiscount,giftPrice);
+        // 할인 후 예상 결제 금액
+        OrderService.afterPrice(totalDiscount);
 
     }
 }
