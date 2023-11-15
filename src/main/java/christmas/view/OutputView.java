@@ -74,4 +74,8 @@ public class OutputView {
         }
     }
 
+    public static void printSpecialDiscount(int specialPrice) {
+        System.out.println("특별 할인 : -" + df.format(specialPrice) + "원");
+    }
+
 }
