@@ -43,6 +43,18 @@ public class OutputView {
 
         System.out.println(df.format(totalPrice) + "원");
 
+        printEventMenu(totalPrice);
+    }
+
+    private static void printEventMenu(int totalPrice) {
+        System.out.println("\n"+"<증정 메뉴>");
+
+        if (totalPrice >= eventPrice) {
+            System.out.println("샴페인 1개");
+        }
+        if (totalPrice < eventPrice) {
+            System.out.println("없음");
+        }
     }
 
 }
