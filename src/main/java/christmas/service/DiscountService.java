@@ -6,8 +6,6 @@ import christmas.view.OutputView;
 
 import java.util.HashMap;
 
-import static christmas.view.OutputView.*;
-
 public class DiscountService {
 
     private static final int specialPrice = 1000;
@@ -27,7 +25,7 @@ public class DiscountService {
             dayDiscount = (day - 1) * 100 + 1000;
         }
 
-        printDdayDiscount(dayDiscount);
+        OutputView.printDdayDiscount(dayDiscount);
         return dayDiscount;
     }
 
@@ -47,7 +45,7 @@ public class DiscountService {
         return weeklyDiscount;
     }
 
-    public static String getTargetCategory(String dayCategory) {
+    private static String getTargetCategory(String dayCategory) {
         if (dayCategory.equals("weekday")) {
             return "dessert";
         }
@@ -74,7 +72,7 @@ public class DiscountService {
         String dayOfTheWeek = date.getDayOfTheWeek();
 
         if (dayOfTheWeek.equals("Sun") || day == 25) {
-            printSpecialDiscount(specialPrice);
+            OutputView.printSpecialDiscount(specialPrice);
             return specialPrice;
         }
         return 0;

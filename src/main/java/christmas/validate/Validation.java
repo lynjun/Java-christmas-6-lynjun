@@ -25,7 +25,7 @@ public class Validation {
         return orderedMenu;
     }
 
-    public static void addToOrderedMenu(String s, HashMap<Menu, Integer> orderedMenu) {
+    private static void addToOrderedMenu(String s, HashMap<Menu, Integer> orderedMenu) {
         String[] split = s.split("-");
 
         int quantity = validateOrderCount(split[1]);
@@ -44,13 +44,13 @@ public class Validation {
         }
     }
 
-    public static void duplicatedMenu(int menuCnt, int OrderCnt) {
+    private static void duplicatedMenu(int menuCnt, int OrderCnt) {
         if (menuCnt != OrderCnt) {
             throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
     }
 
-    public static void validateCategory(HashMap<Menu, Integer> orderMap) {
+    private static void validateCategory(HashMap<Menu, Integer> orderMap) {
 
         List<String> category = new ArrayList<>();
         for (Menu menu : orderMap.keySet()) {
