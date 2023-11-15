@@ -87,4 +87,14 @@ public class DiscountService {
         }
         return 0;
     }
+
+    public static int totalDiscount(int dayDiscount, int weeklyDiscount, int specialDiscount, int giftPrice) {
+        int totalAmountOfDiscount = dayDiscount + weeklyDiscount + specialDiscount + giftPrice;
+
+        OutputView.printDiscount(totalAmountOfDiscount);
+        OutputView.printTotalDiscount(totalAmountOfDiscount);
+        return totalAmountOfDiscount;
+    }
+
+
 }
