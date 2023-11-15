@@ -4,12 +4,11 @@ import christmas.Order;
 import christmas.Price;
 import christmas.model.Date;
 import christmas.util.Menu;
+import christmas.view.InputView;
 import christmas.view.OutputView;
 
 import java.util.HashMap;
 
-import static christmas.view.InputView.*;
-import static christmas.view.OutputView.*;
 
 public class OrderService {
 
@@ -18,7 +17,7 @@ public class OrderService {
     static Price price;
 
     public static int setDate() {
-        String day = inputDate();
+        String day = InputView.inputDate();
         try {
             Date date = new Date(day);
             return date.getDay();
@@ -29,7 +28,7 @@ public class OrderService {
     }
 
     public static HashMap<Menu, Integer> setMenu() {
-        String[] menu = inputMenu();
+        String[] menu = InputView.inputMenu();
         try {
             Order order = new Order(menu);
             orderedMenu = order.getOrder();
@@ -49,7 +48,7 @@ public class OrderService {
 
         totalPrice = price.beforePrice();
 
-        printTotalPrice(totalPrice);
+        OutputView.printTotalPrice(totalPrice);
 
         return totalPrice;
     }
