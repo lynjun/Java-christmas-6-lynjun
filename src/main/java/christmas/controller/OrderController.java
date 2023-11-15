@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.service.DiscountService;
 import christmas.service.OrderService;
 import christmas.util.Menu;
 
@@ -20,5 +21,7 @@ public class OrderController {
         menu = OrderService.setMenu();
         // 주문된 메뉴 출력
         OrderService.printMenu();
+        // 혜택 미리보기
+        DiscountService.previewTheBenefits(day);
     }
 }
