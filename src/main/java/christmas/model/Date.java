@@ -10,6 +10,9 @@ public class Date {
         Validation.validateRange(day);
     }
 
+    public Date() {
+    }
+
     private void convertStringToInteger(String date) {
         try {
             day = Integer.parseInt(date);
