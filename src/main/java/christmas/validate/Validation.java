@@ -15,17 +15,17 @@ public class Validation {
     }
 
     public static HashMap<Menu, Integer> validatedMenu(String[] menu) {
-        HashMap<Menu, Integer> orderMap = new HashMap<>();
+        HashMap<Menu, Integer> orderedMenu = new HashMap<>();
         for (String s : menu) {
-            addTOrderMap(s, orderMap);
+            addToOrderedMenu(s, orderedMenu);
         }
-        duplicatedMenu(menu.length, orderMap.size());
-        validateCategory(orderMap);
-        validateOrderOverCount(orderMap);
-        return orderMap;
+        duplicatedMenu(menu.length, orderedMenu.size());
+        validateCategory(orderedMenu);
+        validateOrderOverCount(orderedMenu);
+        return orderedMenu;
     }
 
-    public static void addTOrderMap(String s, HashMap<Menu, Integer> orderMap) {
+    public static void addToOrderedMenu(String s, HashMap<Menu, Integer> orderedMenu) {
         String[] split = s.split("-");
 
         int quantity = validateOrderCount(split[1]);
@@ -33,12 +33,12 @@ public class Validation {
         if (quantity <= 0) {
             throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
-        orderMap.put(Menu.valueOf(split[0]), quantity);
+        orderedMenu.put(Menu.valueOf(split[0]), quantity);
     }
 
-    private static int validateOrderCount(String count){
+    private static int validateOrderCount(String quantity){
         try {
-            return Integer.parseInt(count);
+            return Integer.parseInt(quantity);
         } catch (NumberFormatException e){
             throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
         }
@@ -62,11 +62,11 @@ public class Validation {
         }
     }
 
-    private static void validateOrderOverCount(HashMap<Menu, Integer> orderMap) {
-        int sum = 0;
-        for (Integer value : orderMap.values()) {
-            sum += value;
-            if (sum > 20) {
+    private static void validateOrderOverCount(HashMap<Menu, Integer> orderedMenu) {
+        int menuQuantity = 0;
+        for (Integer value : orderedMenu.values()) {
+            menuQuantity += value;
+            if (menuQuantity > 20) {
                 throw new IllegalArgumentException(ErrorMessage.ORDER_ERROR.getMessage());
             }
         }
