@@ -22,4 +22,11 @@ public class Price {
         return totalPrice;
     }
 
+    public int afterPrice(int totalDiscount){
+        if(totalPrice>=120000){
+            return totalPrice-totalDiscount+25000;
+        }
+        return totalPrice - totalDiscount;
+    }
+
 }
